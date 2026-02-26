@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "Web" : "npx playwright test --grep @Web",
-    "Sanity" : "npx playwright test --grep @Sanity"
+    "Web": "npx playwright test --grep @Web --reporter=allure-playwright",
+    "Sanity": "npx playwright test --grep @Sanity --reporter=allure-playwright",
+    "All": "npx playwright test --reporter=allure-playwright",
+    "Selectproduct": "npx playwright test tests/newtab.spec.ts --reporter=allure-playwright",
+    "Aleart": "npx playwright test tests/Aleart.spec.ts --reporter=allure-playwright"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +15,7 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.58.1",
-    "@types/node": "^25.2.0"
+    "@types/node": "^25.2.0",
+    "allure-playwright": "^3.5.0"
   }
 }

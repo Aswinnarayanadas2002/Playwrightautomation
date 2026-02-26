@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","5319","@Web new tab focus","chromium","Thu Feb 26 16:08:41 IST 2026","passed","Thu Feb 26 16:08:46 IST 2026","","newtab.spec.ts","",""
