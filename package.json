@@ -7,7 +7,7 @@
     "Sanity": "npx playwright test --grep @Sanity --reporter=allure-playwright",
     "All": "npx playwright test --reporter=allure-playwright",
     "Selectproduct": "npx playwright test tests/newtab.spec.ts --reporter=allure-playwright",
-    "Aleart": "npx playwright test tests/Aleart.spec.ts --reporter=allure-playwright"
+    "Aleart": "npx playwright test tests/Alert.spec.ts --reporter=allure-playwright"
   },
   "keywords": [],
   "author": "",
