@@ -11,7 +11,7 @@ const config = {
         Name : "Aswin",
     },
     
-    item : "Apple iPhone 16 Pro (White Titanium, 256 GB)"
+    item : "Apple iPhone 16 Pro Max (Black Titanium, 256 GB)"
 }
 
 

@@ -37,7 +37,7 @@ class selectproduct {
 
 
             );
-         const checking = await  newtag1.locator('//div[text()="iPhone 16 Pro (White Titanium, 256 GB)"]').nth(1).textContent();
+         const checking = await  newtag1.locator('//div[text()="iPhone 16 Pro Max (Black Titanium, 256 GB)"]').nth(1).textContent();
         expect (config.item).toContain(checking);
         //  console.log(checking.textContent());
        // console.log (checking);
