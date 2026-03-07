@@ -18,14 +18,17 @@ pipeline {
 
         stage('Run Web Tests') {
             steps {
-                // This ensures tests run even if some fail, so reports are always generated
-                sh 'npx playwright test tests/newtab.spec.ts || true'
+                sh 'npx playwright test tests/newtab.spec.ts'
             }
         }
 
         stage('Publish Test Results') {
             steps {
-                junit allowEmptyResults: true, testResults: 'test-results/results.xml'
+                junit(
+                    allowEmptyResults: true,
+                    testResults: 'test-results/results.xml',
+                    skipPublishingChecks: true
+                )
             }
         }
 
@@ -39,13 +42,10 @@ pipeline {
 
     post {
         always {
-            echo 'Pipeline finished - Results published'
+            echo 'Pipeline finished'
         }
         success {
-            echo '✅ Build SUCCESSFUL - All tests passed'
-        }
-        unstable {
-            echo '⚠️ Build UNSTABLE - Check test results'
+            echo '✅ Build SUCCESSFUL'
         }
         failure {
             echo '❌ Build FAILED'
