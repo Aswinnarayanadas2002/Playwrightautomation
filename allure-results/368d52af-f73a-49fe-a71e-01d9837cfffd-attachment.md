@@ -1,0 +1,615 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - link "teleporthq" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "teleporthq" [ref=e9]
+        - img "clear, close" [ref=e12]
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - generic [ref=e18]: Product
+            - img [ref=e19]
+          - generic:
+            - link "image Profesional website builder" [ref=e21] [cursor=pointer]:
+              - /url: /professional-website-builder
+              - generic [ref=e22]:
+                - img "image" [ref=e23]
+                - generic [ref=e24]: Profesional website builder
+            - link "image AI website builder" [ref=e25] [cursor=pointer]:
+              - /url: /ai-website-builder
+              - generic [ref=e26]:
+                - img "image" [ref=e27]
+                - generic [ref=e28]: AI website builder
+            - link "Data source integrations New" [ref=e29] [cursor=pointer]:
+              - /url: /data-sources
+              - generic [ref=e31]:
+                - img [ref=e32]
+                - generic [ref=e34]: Data source integrations
+                - generic [ref=e37]: New
+            - link "image Headless CMS Integrations" [ref=e38] [cursor=pointer]:
+              - /url: /headless-cms-integration
+              - generic [ref=e39]:
+                - img "image" [ref=e40]
+                - generic [ref=e41]: Headless CMS Integrations
+            - link "image Localization" [ref=e42] [cursor=pointer]:
+              - /url: /website-localization
+              - generic [ref=e43]:
+                - img "image" [ref=e44]
+                - generic [ref=e45]: Localization
+            - link "image Static website templates" [ref=e46] [cursor=pointer]:
+              - /url: /static-website-templates
+              - generic [ref=e47]:
+                - img "image" [ref=e48]
+                - generic [ref=e49]: Static website templates
+            - link "Form management system" [ref=e50] [cursor=pointer]:
+              - /url: /forms-management-system
+              - generic [ref=e51]:
+                - img [ref=e52]
+                - generic [ref=e60]: Form management system
+            - link "SEO toolkit" [ref=e61] [cursor=pointer]:
+              - /url: /seo
+              - generic [ref=e62]:
+                - img [ref=e63]
+                - generic [ref=e65]: SEO toolkit
+            - link "image Figma plugin" [ref=e66] [cursor=pointer]:
+              - /url: /figma-export-to-html-plugin
+              - generic [ref=e67]:
+                - img "image" [ref=e68]
+                - generic [ref=e69]: Figma plugin
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - generic [ref=e73]: Services
+            - img [ref=e74]
+          - generic:
+            - link "image Website development" [ref=e76] [cursor=pointer]:
+              - /url: /website-development-service
+              - generic [ref=e77]:
+                - img "image" [ref=e78]
+                - generic [ref=e79]: Website development
+            - link "image Consultancy" [ref=e80] [cursor=pointer]:
+              - /url: https://teleporthqio.teleporthq.app/pricing#consultancy
+              - generic [ref=e81]:
+                - img "image" [ref=e82]
+                - generic [ref=e83]: Consultancy
+        - generic [ref=e84]:
+          - generic [ref=e85]:
+            - generic [ref=e86]: Resources
+            - img [ref=e87]
+          - generic:
+            - link "image Website Showcase Discover what others have built with TeleportHQ" [ref=e89] [cursor=pointer]:
+              - /url: /community-websites
+              - generic [ref=e90]:
+                - generic [ref=e91]:
+                  - img "image" [ref=e92]
+                  - generic [ref=e93]: Website Showcase
+                - generic [ref=e94]: Discover what others have built with TeleportHQ
+            - link "image Customer Stories Read what others are saying about TeleportHQ" [ref=e95] [cursor=pointer]:
+              - /url: /customer-stories
+              - generic [ref=e96]:
+                - generic [ref=e97]:
+                  - img "image" [ref=e98]
+                  - generic [ref=e99]: Customer Stories
+                - generic [ref=e100]: Read what others are saying about TeleportHQ
+            - link "image Templates Discover and start from our ready-made template gallery" [ref=e101] [cursor=pointer]:
+              - /url: /static-website-templates
+              - generic [ref=e102]:
+                - generic [ref=e103]:
+                  - img "image" [ref=e104]
+                  - generic [ref=e105]: Templates
+                - generic [ref=e106]: Discover and start from our ready-made template gallery
+            - link "image Blog Read our latest articles on low-code development and more" [ref=e107] [cursor=pointer]:
+              - /url: https://teleporthq.io/blog
+              - generic [ref=e108]:
+                - generic [ref=e109]:
+                  - img "image" [ref=e110]
+                  - generic [ref=e111]: Blog
+                - generic [ref=e112]: Read our latest articles on low-code development and more
+            - link "image Help Center Find answers to the most common questions in our help section" [ref=e113] [cursor=pointer]:
+              - /url: https://help.teleporthq.io/
+              - generic [ref=e114]:
+                - generic [ref=e115]:
+                  - img "image" [ref=e116]
+                  - generic [ref=e117]: Help Center
+                - generic [ref=e118]: Find answers to the most common questions in our help section
+            - link "image Documentation Read trough our docummentation and technical knowledge base." [ref=e119] [cursor=pointer]:
+              - /url: https://docs.teleporthq.io/
+              - generic [ref=e120]:
+                - generic [ref=e121]:
+                  - img "image" [ref=e122]
+                  - generic [ref=e123]: Documentation
+                - generic [ref=e124]: Read trough our docummentation and technical knowledge base.
+            - link "image Tutorials Learn how to use TeleportHQ in under 10 minutes" [ref=e125] [cursor=pointer]:
+              - /url: https://www.youtube.com/watch?v=stTXPnijYNw&list=PLQQ9KgvzwLU2KCqTu8y2q8KTAuqvsszUx
+              - generic [ref=e126]:
+                - generic [ref=e127]:
+                  - img "image" [ref=e128]
+                  - generic [ref=e129]: Tutorials
+                - generic [ref=e130]: Learn how to use TeleportHQ in under 10 minutes
+        - link "White Label Editor" [ref=e133] [cursor=pointer]:
+          - /url: /white-label-website-builder
+        - link "Pricing" [ref=e136] [cursor=pointer]:
+          - /url: /pricing
+        - generic [ref=e137]:
+          - link "Login" [ref=e138] [cursor=pointer]:
+            - /url: https://play.teleporthq.io/signin
+          - link "Start for free" [ref=e139] [cursor=pointer]:
+            - /url: https://play.teleporthq.io/signup
+    - generic [ref=e142]:
+      - link "teleporthq" [ref=e143] [cursor=pointer]:
+        - /url: /
+        - img "teleporthq" [ref=e145]
+      - generic [ref=e146]:
+        - generic [ref=e147]:
+          - generic [ref=e148] [cursor=pointer]:
+            - generic [ref=e149]: Product
+            - img [ref=e150]
+          - generic [ref=e152] [cursor=pointer]:
+            - generic [ref=e153]: Services
+            - img [ref=e154]
+          - generic [ref=e156] [cursor=pointer]:
+            - generic [ref=e157]: Resources
+            - img [ref=e158]
+          - link "White Label Editor" [ref=e160] [cursor=pointer]:
+            - /url: /white-label-website-builder
+            - generic [ref=e162]: White Label Editor
+          - link "Pricing" [ref=e163] [cursor=pointer]:
+            - /url: /pricing
+            - generic [ref=e165]: Pricing
+        - generic [ref=e166]:
+          - link "Login" [ref=e167] [cursor=pointer]:
+            - /url: https://play.teleporthq.io/signin
+          - link "Start for free" [ref=e168] [cursor=pointer]:
+            - /url: https://play.teleporthq.io/signup
+    - generic [ref=e171]:
+      - link "teleporthq" [ref=e172] [cursor=pointer]:
+        - /url: /
+        - img "teleporthq" [ref=e174]
+      - generic [ref=e175]:
+        - generic [ref=e176]:
+          - generic [ref=e177] [cursor=pointer]:
+            - generic [ref=e178]: Product
+            - img [ref=e179]
+          - generic [ref=e181] [cursor=pointer]:
+            - generic [ref=e182]: Services
+            - img [ref=e183]
+          - generic [ref=e185] [cursor=pointer]:
+            - generic [ref=e186]: Resources
+            - img [ref=e187]
+          - link "White Label Editor" [ref=e189] [cursor=pointer]:
+            - /url: /white-label-website-builder
+            - generic [ref=e191]: White Label Editor
+          - link "Pricing" [ref=e192] [cursor=pointer]:
+            - /url: /pricing
+            - generic [ref=e194]: Pricing
+        - generic [ref=e195]:
+          - link "Login" [ref=e196] [cursor=pointer]:
+            - /url: https://play.teleporthq.io/signin
+          - link "Start for free" [ref=e197] [cursor=pointer]:
+            - /url: https://play.teleporthq.io/signup
+    - main [ref=e198]:
+      - generic [ref=e200]:
+        - generic [ref=e201]:
+          - heading "Free static website templates" [level=1] [ref=e202]
+          - generic [ref=e203]: Build responsive static websites within minutes with basic knowledge of HTML and CSS. Our static website templates are free, fast and responsive. Click on any design template and start editing without signing up.
+          - link "Explore the templates" [ref=e204] [cursor=pointer]:
+            - /url: "#templates-grid"
+        - img "free static website templates" [ref=e206]
+      - generic [ref=e209]:
+        - generic [ref=e210]:
+          - generic [ref=e212]:
+            - heading "Ready-made static website design templates" [level=2] [ref=e213]
+            - generic [ref=e214]: Browse through our collection of free HTML and CSS website templates. All our designs are created by professionals and you get access to the source code as well. Static web page design has never been more simple.
+          - generic [ref=e215]:
+            - generic [ref=e216]:
+              - generic [ref=e217]:
+                - img "Active online software template" [ref=e218]
+                - link "Start with this template" [ref=e220] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/template-12-modified-f6v9wa?source=templates
+              - heading "Traveler Tourism design" [level=3] [ref=e221]
+              - generic [ref=e222]: You can easily customize this template to create a homepage for a travel app. The design is simple and clean, with a header that shows a large image background and a unique trip search bar. It also includes sections for popular destinations, staff, testimonials, highlights, FAQs, and more.
+            - generic [ref=e223]:
+              - generic [ref=e224]:
+                - img "Active online software template" [ref=e225]
+                - link "Start with this template" [ref=e227] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/template-11-z53gvb?source=templates
+              - heading "Character NFT website" [level=3] [ref=e228]
+              - generic [ref=e229]: Start from this template if you want to create a website for an NFT. It has a dark-toned design with yellow and purple accents. The design features clean sections to show the NFTs, to explain the process behind NFTs, a project roadmap section, an FAQ and a very bold CTA near the bottom of the page.
+            - generic [ref=e230]:
+              - generic [ref=e231]:
+                - img "Active online software template" [ref=e232]
+                - link "Start with this template" [ref=e234] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/template-10-4lszk4?source=templates
+              - heading "Medica Health industry template" [level=3] [ref=e235]
+              - generic [ref=e236]: We designed this template for businesses in the medical industry. It uses a white and blue color palette, with many sections detailing different covered practices, video presentations, an area to present the staff, news, glossary, diagnosis, appointment booking section, and calls to action.
+            - generic [ref=e237]:
+              - generic [ref=e238]:
+                - img "Active online software template" [ref=e239]
+                - link "Start with this template" [ref=e241] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/template-9-nygzgm?source=templates
+              - heading "Togthr High Tech Design" [level=3] [ref=e242]
+              - generic [ref=e243]: An eye catching design, perfect for companies in the IT sector, gadget companies or AI. It features a video background in the header guaranteed to draw attention, a special typeface as an accent as well as all of the sections you would need to present your product to the world.
+            - generic [ref=e244]:
+              - generic [ref=e245]:
+                - img "Active online software template" [ref=e246]
+                - link "Start with this template" [ref=e248] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/template-8-0xu2t7?source=templates
+              - heading "OnConf Events Template" [level=3] [ref=e249]
+              - generic [ref=e250]: Built with online events, conferences, seminars and conventions in mind, the OnConf template is a clean design with sharp sections, rounded CTA's and striking accents. It features all of the sections you would need, including speakers, sponsors, pricing or video preview.
+            - generic [ref=e251]:
+              - generic [ref=e252]:
+                - img "Active online software template" [ref=e253]
+                - link "Start with this template" [ref=e255] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/helpa-template-7-1sxee3?source=templates
+              - heading "Helpa Organization Template" [level=3] [ref=e256]
+              - generic [ref=e257]: This design is ideal for charities, organizations and causes. It has a clean and simple design and color palette and plenty of space for using images. The template has built in sections for info, steps for donation, effort progression, testimonials, FAQ and more.
+            - generic [ref=e258]:
+              - generic [ref=e259]:
+                - img "Active online software template" [ref=e260]
+                - link "Start with this template" [ref=e262] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/remarkable-template-6-2lxogw?source=templates
+              - heading "Remarkable Services template" [level=3] [ref=e263]
+              - generic [ref=e264]: Remarkable is a crisp template that can be a good choice for consulting companies that need a modern website. Its clean design allows you to display a lot of information to describe your company’s services, partner companies, testimonials and newsletter subscription form.
+            - generic [ref=e265]:
+              - generic [ref=e266]:
+                - img "Active online software template" [ref=e267]
+                - link "Start with this template" [ref=e269] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/productive-realistic-worm-m9c3qs?source=templates
+              - heading "HOLA Design studio" [level=3] [ref=e270]
+              - generic [ref=e271]: A clean template with both white and black backgrounds and bold accent colors. Try out this New design template packed with images to represent your business visually, making it the perfect choice for a design studio website, or showcase your photography portfolio.
+            - generic [ref=e272]:
+              - generic [ref=e273]:
+                - img "Active online software template" [ref=e274]
+                - link "Start with this template" [ref=e276] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/impressive-babyish-dunlin-l8j656?source=templates
+              - heading "SPYRL Design agency template" [level=3] [ref=e277]
+              - generic [ref=e278]: A clean design, perfect for a website that represents the face of a design agency. The template contains a full screen video presentation, multiple study cases which can perfectly showcase your different projects, components for testimonials, or areas for statistics and much more.
+            - generic [ref=e279]:
+              - generic [ref=e280]:
+                - img "Active online software template" [ref=e281]
+                - link "Start with this template" [ref=e283] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/large-brave-lemur-kenrjl?source=templates
+              - heading "Planical modern template" [level=3] [ref=e284]
+              - generic [ref=e285]: "Dark mode websites stand out and this cool template can help your app stand out as well. It has a lot of really nice sections that you can easily customize, including: call to action containers, accordion FAQ widgets and monthly/yearly pricing."
+            - generic [ref=e286]:
+              - generic [ref=e287]:
+                - img "Active online software template" [ref=e288]
+                - link "Start with this template" [ref=e290] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/oily-few-lapwing-91382h?source=templates
+              - heading "Finbest finance app template" [level=3] [ref=e291]
+              - generic [ref=e292]: This is a great template to use for any mobile app. It features several interesting sections, including one for video presentation, app statistics, accordion widget for detailed features, a cool testimonial slider and a pricing section for your app.
+            - generic [ref=e293]:
+              - generic [ref=e294]:
+                - img "Active online software template" [ref=e295]
+                - link "Start with this template" [ref=e297] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/eager-constant-cat-fwcgxi?source=templates
+              - heading "Active online software page" [level=3] [ref=e298]
+              - generic [ref=e299]: If you’re looking to build an online product or software as a service, this template is a great fit. The layout is designed to showcase your UI, features, testimonials, stats and more. Use this template and start your first project.
+            - generic [ref=e300]:
+              - generic [ref=e301]:
+                - img "responsive website template" [ref=e302]
+                - link "Start with this template" [ref=e304] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/superb-even-wolverine-30nsyc?source=templates
+              - heading "Mobillio online store template" [level=3] [ref=e305]
+              - generic [ref=e306]: The Mobillio template is designed to display your online store furniture, but with a few easy tweaks. It can easily be configured as a presentation store for any type of product. Start here and customize it for your business.
+            - generic [ref=e307]:
+              - generic [ref=e308]:
+                - img "responsive website template" [ref=e309]
+                - link "Start with this template" [ref=e311] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/creative-agency-page?source=templates
+              - heading "Creative agency page" [level=3] [ref=e312]
+              - generic [ref=e313]: If you're working on an artsy and creative project and you need a powerful visual impact, then this template is a perfect choice. Start a new project with this template, customize it with your visuals, and apply your personal touch.
+            - generic [ref=e314]:
+              - generic [ref=e315]:
+                - img "responsive website template" [ref=e316]
+                - link "Start with this template" [ref=e318] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/up-start-template?source=templates
+              - heading "Up start template" [level=3] [ref=e319]
+              - generic [ref=e320]: Start your next project with this responsive template to create a brand new website for an app, digital software, or SAAS. Use the prebuilt sections in any way you want, change the images, and you're ready to publish.
+            - generic [ref=e321]:
+              - generic [ref=e322]:
+                - img "responsive website template" [ref=e323]
+                - link "Start with this template" [ref=e325] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/feedbox-mobile-app?source=templates
+              - heading "Mobile app landing page" [level=3] [ref=e326]
+              - generic [ref=e328]: Find your inspiration with this template and jumpstart your first mobile app landing page. Add the necessary information to describe and show all the main features and benefits of your app.
+            - generic [ref=e329]:
+              - generic [ref=e330]:
+                - img "responsive website template" [ref=e331]
+                - link "Start with this template" [ref=e333] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/marketing-event-page?source=templates
+              - heading "Marketing event conference" [level=3] [ref=e334]
+              - generic [ref=e335]: Start from this fully functional template to present your marketing event. It has the right structure and beautiful design elements. You only need to add your content and replace the necessary images to make it ready for the world.
+            - generic [ref=e336]:
+              - generic [ref=e337]:
+                - img "responsive website template" [ref=e338]
+                - link "Start with this template" [ref=e340] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/notus-pro?source=templates
+              - heading "Agency responsive template" [level=3] [ref=e341]
+              - generic [ref=e342]: Use this complete template for your digital/start-up agency and start filling in the content that best describes your activity. Customize the style and add images to make it your own.
+            - generic [ref=e343]:
+              - generic [ref=e344]:
+                - img "application presentation template" [ref=e345]
+                - link "Start with this template" [ref=e347] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/landify-tutorial?source=templates
+              - heading "Application template" [level=3] [ref=e348]
+              - generic [ref=e349]: Start from this plug and play template for your mobile application. Simply add and replace the visuals to represent your mobile app and use a variety of sections that can best showcase features, testimonials, product presentations and many other important components of a static website.
+            - generic [ref=e350]:
+              - generic [ref=e351]:
+                - img "travel website template" [ref=e352]
+                - link "Start with this template" [ref=e354] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/travel-agency?source=templates
+              - heading "Travel website template" [level=3] [ref=e355]
+              - generic [ref=e356]: Start with a prebuilt page structure for the story you want to tell on your travelling website. Use this modular design for your agency website or even your personal blog. Customize this pre-made layout with your own pictures and give it the style and personality you want.
+            - generic [ref=e357]:
+              - generic [ref=e358]:
+                - img "business website template" [ref=e359]
+                - link "Start with this template" [ref=e361] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/soft-ui-pro?source=templates
+              - heading "Business Website Template" [level=3] [ref=e362]
+              - generic [ref=e363]: A clean and modern design to make your business stand out from the crowd. Make a compelling presentation of your services by using this multipurpose template. This template theme has a professional design that, combined with the right words can get customers interest.
+            - generic [ref=e364]:
+              - generic [ref=e365]:
+                - img "landing page template" [ref=e366]
+                - link "Start with this template" [ref=e368] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/presentation-page?source=templates
+              - heading "Landing Page Template" [level=3] [ref=e369]
+              - generic [ref=e370]: Start with a simple blueprint or wireframe and focus on building the structure and layout for your static website. Leave the creative part and design details for later and iterate on the structure until you're pleased with the result.
+            - generic [ref=e371]:
+              - generic [ref=e372]:
+                - img "wireframe template" [ref=e373]
+                - link "Start with this template" [ref=e375] [cursor=pointer]:
+                  - /url: https://play.teleporthq.io/projects/landing-page?source=templates
+              - heading "Wireframe template" [level=3] [ref=e376]
+              - generic [ref=e377]: Design high converting static websites and landing pages with this pre-build easy to use template. You only need to replace images and text, play with the layout and change the order of the sections. Use this landing page template to present your business idea.
+        - generic [ref=e380]:
+          - img "Generate real code image" [ref=e382]
+          - generic [ref=e383]:
+            - generic [ref=e384]: AI website template generation
+            - heading "Expand Your Templates with AI-Powered Page Generation" [level=2] [ref=e385]
+            - generic [ref=e386]:
+              - generic [ref=e387]:
+                - generic [ref=e388]:
+                  - img [ref=e389]
+                  - generic [ref=e391]: Instant Template Expansion
+                - generic [ref=e393]: Start with one of our ready-made static website templates, then generate additional pages automatically, so your site grows fast without manual layout work.
+              - generic [ref=e394]:
+                - generic [ref=e395]:
+                  - img [ref=e396]
+                  - generic [ref=e398]: Sitewide Style Consistency
+                - generic [ref=e400]: Choose a template’s design then let the AI replicate its look across new pages—colors, fonts, spacing and structure remain aligned, preserving your visual identity.
+              - generic [ref=e401]:
+                - generic [ref=e402]:
+                  - img [ref=e403]
+                  - generic [ref=e409]: Editable & Export-Ready Code
+                - generic [ref=e411]: Every generated page remains fully editable in our low-code editor and exports clean HTML/CSS—so you maintain control even after AI generation.
+            - link "Create Website Using AI" [ref=e412] [cursor=pointer]:
+              - /url: https://play.teleporthq.io/signup
+              - generic [ref=e413]: Create Website Using AI
+              - img [ref=e414]
+      - generic [ref=e418]:
+        - generic [ref=e419]:
+          - heading "CSS and HTML website templates" [level=1] [ref=e420]
+          - generic [ref=e421]: The only platform that offers HTML website templates with source code ready to be exported. With a basic knowledge of HTML and CSS you can customize any existing website template and use them for FREE.
+          - generic [ref=e422]: Using TeleportHQ for static web page design gives you instant access to the source code, including HTML & CSS of any project.
+        - img "CSS and HTML source code" [ref=e424]
+      - generic [ref=e426]:
+        - heading "Missing your favorite template? Let us know!" [level=2] [ref=e428]
+        - paragraph [ref=e429]: Help us improve your experience with TeleportHQ. We’ll get in touch soon!
+        - img "image" [ref=e430]
+        - img "image" [ref=e431]
+        - generic [ref=e433]:
+          - textbox "Enter your email" [ref=e434]
+          - button "Count me in" [ref=e435] [cursor=pointer]
+      - generic [ref=e437]:
+        - generic [ref=e438]:
+          - heading "Create static pages or entire websites using TeleportHQ" [level=2] [ref=e439]
+          - generic [ref=e440]: Edit and style your website the way you want. Our low code design platform makes working with static website themes easy and accessible for people of all skill levels. In addition, TeleportHQ allows you to publish or export your page in HTML code, making it a friendly and flexible design platform.
+        - link "Sign up free" [ref=e441] [cursor=pointer]:
+          - /url: https://play.teleporthq.io/signup
+      - generic [ref=e445]:
+        - heading "Why should I build my website using TeleportHQ’s static website templates?" [level=1] [ref=e446]
+        - generic [ref=e447]: "With a basic CSS and HTML understanding you can simply drag and drop elements to build your pages. Start from our collections of static templates and choose what best suits you: portfolio page, agency, business / app presentation, etc. Our builder allows you to view the source code and export your projects in clean CSS and HTML or any JS framework."
+        - generic [ref=e448]:
+          - generic [ref=e449]:
+            - img "website optimization and ranking" [ref=e450]
+            - heading "Built for speed" [level=3] [ref=e451]
+            - generic [ref=e452]: We know speed plays a big role when it comes to your website rankings, that’s why all our static website templates are optimized as much as possible.
+          - generic [ref=e453]:
+            - img "custom website sections" [ref=e454]
+            - heading "Low code editor" [level=3] [ref=e455]
+            - generic [ref=e456]: Customize any static website template using our powerful low code editor. Add or remove pages, blocks and other design elements without writing a single line of code.
+          - generic [ref=e457]:
+            - img "optimized html code" [ref=e458]
+            - heading "Proper coding" [level=3] [ref=e459]
+            - generic [ref=e460]: We make sure that the output of our static web page html code is as clean as possible. Our website themes come with optimized JS, CSS and HTML code structure.
+          - generic [ref=e461]:
+            - img "seo friendly website" [ref=e462]
+            - heading "In-built SEO features" [level=3] [ref=e463]
+            - generic [ref=e464]: Static websites and good SEO give you the best chance to rank in google. Create SEO-friendly out-of-the-box websites, managing all your basic SEO needs from our platform.
+          - generic [ref=e465]:
+            - img "mobile friendly templates" [ref=e466]
+            - heading "Mobile friendly" [level=3] [ref=e467]
+            - generic [ref=e468]: All our static page templates are responsive, fast loading with a clean code output. Use mobile friendly static website themes to get ahead of your competition.
+          - generic [ref=e469]:
+            - img "free code export" [ref=e470]
+            - heading "Code export" [level=3] [ref=e471]
+            - generic [ref=e472]: TeleportHQ is one of the few visual HTML/CSS editors that allows code export. Create static web pages based on our templates and export your HTML code.
+      - generic [ref=e474]:
+        - heading "Get started and create your static website in minutes" [level=2] [ref=e475]:
+          - text: Get started and create
+          - text: your static website in minutes
+        - generic [ref=e476]: Pick the best static template for you and customize it with our powerful editor by adding or removing pages, blocks and design elements.
+        - link "Sign up Free" [ref=e477] [cursor=pointer]:
+          - /url: https://play.teleporthq.io/signup
+        - img "image" [ref=e478]
+    - contentinfo [ref=e480]:
+      - generic [ref=e481]:
+        - generic [ref=e482]:
+          - generic [ref=e483]:
+            - generic [ref=e484]: Product
+            - link "White Label Editor" [ref=e485] [cursor=pointer]:
+              - /url: /white-label-website-builder
+              - generic [ref=e487]: White Label Editor
+            - link "Professional website builder" [ref=e488] [cursor=pointer]:
+              - /url: /professional-website-builder
+              - generic [ref=e490]: Professional website builder
+            - link "Headless CMS Integrations" [ref=e491] [cursor=pointer]:
+              - /url: /headless-cms-integration
+              - generic [ref=e493]: Headless CMS Integrations
+            - link "Data Source Integrations" [ref=e494] [cursor=pointer]:
+              - /url: /data-sources
+              - generic [ref=e496]: Data Source Integrations
+            - link "Localization" [ref=e497] [cursor=pointer]:
+              - /url: /website-localization
+              - generic [ref=e499]: Localization
+            - link "Static website builder" [ref=e500] [cursor=pointer]:
+              - /url: /static-website-builder
+              - generic [ref=e502]: Static website builder
+            - link "Static website templates" [ref=e503] [cursor=pointer]:
+              - /url: /static-website-templates
+              - generic [ref=e505]: Static website templates
+            - link "Low-code development" [ref=e506] [cursor=pointer]:
+              - /url: /free-low-code-platform
+              - generic [ref=e508]: Low-code development
+            - link "AI website builder" [ref=e509] [cursor=pointer]:
+              - /url: /ai-website-builder
+              - generic [ref=e511]: AI website builder
+            - link "Code collaboration" [ref=e512] [cursor=pointer]:
+              - /url: /real-time-code-collaboration
+              - generic [ref=e514]: Code collaboration
+            - link "Figma plugin" [ref=e515] [cursor=pointer]:
+              - /url: /figma-export-to-html-plugin
+              - generic [ref=e517]: Figma plugin
+            - link "Release notes" [ref=e518] [cursor=pointer]:
+              - /url: /release-notes-latest
+              - generic [ref=e520]: Release notes
+          - generic [ref=e521]:
+            - generic [ref=e522]: Services
+            - link "Website development" [ref=e523] [cursor=pointer]:
+              - /url: /website-development-service
+              - generic [ref=e525]: Website development
+            - link "Consultancy" [ref=e526] [cursor=pointer]:
+              - /url: https://teleporthq.io/pricing#consultancy
+              - generic [ref=e528]: Consultancy
+          - generic [ref=e529]:
+            - generic [ref=e530]: Resources
+            - link "Community websites" [ref=e531] [cursor=pointer]:
+              - /url: /community-websites
+              - generic [ref=e533]: Community websites
+            - link "Customer Stories" [ref=e534] [cursor=pointer]:
+              - /url: /customer-stories
+              - generic [ref=e536]: Customer Stories
+            - link "Templates" [ref=e537] [cursor=pointer]:
+              - /url: /static-website-templates
+              - generic [ref=e539]: Templates
+            - link "Blog" [ref=e540] [cursor=pointer]:
+              - /url: https://teleporthq.io/blog
+              - generic [ref=e542]: Blog
+            - link "Help Center" [ref=e543] [cursor=pointer]:
+              - /url: https://help.teleporthq.io/en/
+              - generic [ref=e545]: Help Center
+            - link "Documentation" [ref=e546] [cursor=pointer]:
+              - /url: https://docs.teleporthq.io/
+              - generic [ref=e548]: Documentation
+            - link "Tutorials" [ref=e549] [cursor=pointer]:
+              - /url: https://www.youtube.com/watch?v=stTXPnijYNw&list=PLQQ9KgvzwLU2KCqTu8y2q8KTAuqvsszUx
+              - generic [ref=e551]: Tutorials
+          - generic [ref=e552]:
+            - generic [ref=e553]: Solutions
+            - link "Responsive Web Design" [ref=e554] [cursor=pointer]:
+              - /url: /responsive-web-design
+              - generic [ref=e556]: Responsive Web Design
+            - link "Responsive Prototypes" [ref=e557] [cursor=pointer]:
+              - /url: /figma-designs-to-responsive-prototypes
+              - generic [ref=e559]: Responsive Prototypes
+            - link "Design to Code" [ref=e560] [cursor=pointer]:
+              - /url: /design-to-code
+              - generic [ref=e562]: Design to Code
+            - link "Static Website Builder" [ref=e563] [cursor=pointer]:
+              - /url: /static-website-builder
+              - generic [ref=e565]: Static Website Builder
+            - link "Static Website Generator" [ref=e566] [cursor=pointer]:
+              - /url: /static-site-generator
+              - generic [ref=e568]: Static Website Generator
+            - link "React Website Generator" [ref=e569] [cursor=pointer]:
+              - /url: /react-static-website-generator
+              - generic [ref=e571]: React Website Generator
+            - link "Angular Site Generator" [ref=e572] [cursor=pointer]:
+              - /url: /angular-static-website
+              - generic [ref=e574]: Angular Site Generator
+            - link "VUE Site Generator" [ref=e575] [cursor=pointer]:
+              - /url: /static-site-generator-for-vue
+              - generic [ref=e577]: VUE Site Generator
+            - link "React UI Builder" [ref=e578] [cursor=pointer]:
+              - /url: /browser-based-react-ui-builder
+              - generic [ref=e580]: React UI Builder
+            - link "Webflow Alternative" [ref=e581] [cursor=pointer]:
+              - /url: /webflow-alternative
+              - generic [ref=e583]: Webflow Alternative
+          - generic [ref=e584]:
+            - generic [ref=e585]: About
+            - link "About Us" [ref=e586] [cursor=pointer]:
+              - /url: /about
+              - generic [ref=e588]: About Us
+            - link "Community" [ref=e589] [cursor=pointer]:
+              - /url: /community
+              - generic [ref=e591]: Community
+            - link "Report abuse" [ref=e592] [cursor=pointer]:
+              - /url: /report-abuse
+              - generic [ref=e594]: Report abuse
+            - link "Privacy policy" [ref=e595] [cursor=pointer]:
+              - /url: /privacy-policy
+              - generic [ref=e597]: Privacy policy
+            - link "Terms and conditions" [ref=e598] [cursor=pointer]:
+              - /url: /terms-and-conditions
+              - generic [ref=e600]: Terms and conditions
+            - link "Contact Us" [ref=e601] [cursor=pointer]:
+              - /url: mailto:hello@teleporthq.io?subject=
+              - generic [ref=e603]: Contact Us
+          - generic [ref=e604]:
+            - generic [ref=e605]: Follow
+            - link "Twitter" [ref=e606] [cursor=pointer]:
+              - /url: https://twitter.com/teleportHQio
+              - generic [ref=e607]:
+                - img [ref=e608]
+                - generic [ref=e610]: Twitter
+            - link "LinkedIn" [ref=e611] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/teleporthq
+              - generic [ref=e612]:
+                - img [ref=e613]
+                - generic [ref=e615]: LinkedIn
+            - link "Github" [ref=e616] [cursor=pointer]:
+              - /url: https://github.com/teleporthq
+              - generic [ref=e617]:
+                - img [ref=e618]
+                - generic [ref=e620]: Github
+            - link "Youtube" [ref=e621] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UC_hv653G9B7gsVjMQ6DuSgA
+              - generic [ref=e622]:
+                - img [ref=e623]
+                - generic [ref=e625]: Youtube
+            - link "Facebook" [ref=e626] [cursor=pointer]:
+              - /url: https://www.facebook.com/teleportHQ
+              - generic [ref=e627]:
+                - img [ref=e628]
+                - generic [ref=e630]: Facebook
+            - link "image Discord" [ref=e631] [cursor=pointer]:
+              - /url: https://discord.gg/uJrbeuHhyR
+              - generic [ref=e632]:
+                - img "image" [ref=e633]
+                - generic [ref=e634]: Discord
+        - generic [ref=e635]:
+          - img "image" [ref=e636]
+          - generic [ref=e637]: Copyright © TeleportHQ - 2024
+    - link "Sign up to TeleportHQ" [ref=e638] [cursor=pointer]:
+      - /url: https://play.teleporthq.io/signup
+      - generic "Sign up to TeleportHQ" [ref=e639]:
+        - img "made-with-teleport" [ref=e640]
+        - generic [ref=e641]: Built in TeleportHQ
+  - alert [ref=e642]
+```
