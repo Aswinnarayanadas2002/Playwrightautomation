@@ -24,7 +24,7 @@ pipeline {
 
         stage('Run Web Tests') {
             steps {
-                sh 'npm run Web'
+                sh 'npx playwright test'
             }
         }
 
