@@ -47,14 +47,40 @@ pipeline {
                     currentBuild.result = 'SUCCESS'
                 }
             }
-            echo 'Pipeline finished'
         }
+
         success {
-            echo '✅ Build SUCCESSFUL'
+            emailext(
+                to: 'youremail@gmail.com',
+                subject: "✅ BUILD SUCCESS - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """
+                    <h2>Build Successful!</h2>
+                    <p><b>Job:</b> ${env.JOB_NAME}</p>
+                    <p><b>Build Number:</b> ${env.BUILD_NUMBER}</p>
+                    <p><b>Status:</b> SUCCESS ✅</p>
+                    <p><b>Build URL:</b> <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
+                    <p>All Playwright tests passed!</p>
+                """,
+                mimeType: 'text/html'
+            )
         }
+
         failure {
-            echo '❌ Build FAILED'
+            emailext(
+                to: 'youremail@gmail.com',
+                subject: "❌ BUILD FAILED - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """
+                    <h2>Build Failed!</h2>
+                    <p><b>Job:</b> ${env.JOB_NAME}</p>
+                    <p><b>Build Number:</b> ${env.BUILD_NUMBER}</p>
+                    <p><b>Status:</b> FAILED ❌</p>
+                    <p><b>Build URL:</b> <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
+                    <p>Please check the logs for details.</p>
+                """,
+                mimeType: 'text/html'
+            )
         }
+
     }
 
 }
