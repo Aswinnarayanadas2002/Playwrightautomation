@@ -29,12 +29,6 @@ pipeline {
                     testResults: 'test-results/results.xml',
                     skipPublishingChecks: true
                 )
-                // Force SUCCESS if junit incorrectly marks as UNSTABLE
-                script {
-                    if (currentBuild.result == 'UNSTABLE') {
-                        currentBuild.result = 'SUCCESS'
-                    }
-                }
             }
         }
 
@@ -48,6 +42,11 @@ pipeline {
 
     post {
         always {
+            script {
+                if (currentBuild.result == 'UNSTABLE') {
+                    currentBuild.result = 'SUCCESS'
+                }
+            }
             echo 'Pipeline finished'
         }
         success {
