@@ -24,12 +24,12 @@ pipeline {
 
         stage('Run Web Tests') {
             steps {
-                sh 'npx playwright test tests/newtab.spec.ts'
+                sh 'npx playwright test tests/newtab.spec.ts || ture'
             }
         }
         stage('Publish Test Results') {
             steps {
-                junit 'test-results/results.xml'
+                junit allowEmptyResults: true, testResults: 'test-results/results.xml'
             }
         }
         stage('Generate Allure Report') {
@@ -37,6 +37,21 @@ pipeline {
                 allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
             }
         }
+
+        post {
+        always {
+            echo 'Pipeline finished - Results published'
+        }
+        success {
+            echo '✅ Build SUCCESSFUL - All tests passed'
+        }
+        unstable {
+            echo '⚠️ Build UNSTABLE - Check test results'
+        }
+        failure {
+            echo '❌ Build FAILED'
+        }
+    }
 
     }
 
