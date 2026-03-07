@@ -21,6 +21,14 @@ pipeline {
                 sh 'npx playwright test tests/newtab.spec.ts'
             }
         }
+        stage('Debug - Check XML') {
+    steps {
+        sh 'echo "--- XML Content ---"'
+        sh 'cat test-results/results.xml'
+        sh 'echo "--- File exists check ---"'
+        sh 'ls -la test-results/'
+    }
+}
 
         stage('Publish Test Results') {
             steps {
