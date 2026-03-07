@@ -27,6 +27,11 @@ pipeline {
                 sh 'npx playwright test tests/newtab.spec.ts'
             }
         }
+        stage('Publish Test Results') {
+            steps {
+                junit 'test-results/results.xml'
+            }
+        }
         stage('Generate Allure Report') {
             steps {
                 allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
