@@ -60,8 +60,8 @@ pipeline {
 
                 // 3. Send the email from within the 'always' block so it never fails to trigger
                 emailext(
-                    to: 'aswinnaryanadas@gmail.com',
-                    from: 'aswinnaryanadas@gmail.com',
+                    to: 'aswinnarayanadas@gmail.com',
+                    from: 'aswinnarayanadas@gmail.com',
                     subject: "${subjectStatus} - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                     mimeType: 'text/html',
                     body: """
