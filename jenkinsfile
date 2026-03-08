@@ -77,7 +77,7 @@ pipeline {
         failure {
             emailext(
                 to: 'aswinaryanadas@gmail.com',
-                from: 'aswinaryanadas@gmail.com',
+                
                 subject: "❌ BUILD FAILED - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
                     <html>
