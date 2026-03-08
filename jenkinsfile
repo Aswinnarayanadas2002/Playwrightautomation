@@ -51,15 +51,24 @@ pipeline {
 
         success {
             emailext(
-                to: 'youremail@gmail.com',
+                to: 'aswinaryanadas@gmail.com',
+                from: 'aswinaryanadas@gmail.com',
                 subject: "✅ BUILD SUCCESS - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
-                    <h2>Build Successful!</h2>
-                    <p><b>Job:</b> ${env.JOB_NAME}</p>
-                    <p><b>Build Number:</b> ${env.BUILD_NUMBER}</p>
-                    <p><b>Status:</b> SUCCESS ✅</p>
-                    <p><b>Build URL:</b> <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
-                    <p>All Playwright tests passed!</p>
+                    <html>
+                    <body>
+                        <h2 style="color:green;">✅ Build Successful!</h2>
+                        <table>
+                            <tr><td><b>Job:</b></td><td>${env.JOB_NAME}</td></tr>
+                            <tr><td><b>Build Number:</b></td><td>#${env.BUILD_NUMBER}</td></tr>
+                            <tr><td><b>Status:</b></td><td>SUCCESS ✅</td></tr>
+                            <tr><td><b>Duration:</b></td><td>${currentBuild.durationString}</td></tr>
+                            <tr><td><b>Build URL:</b></td><td><a href="${env.BUILD_URL}">${env.BUILD_URL}</a></td></tr>
+                        </table>
+                        <br>
+                        <p>All Playwright tests passed successfully! 🎉</p>
+                    </body>
+                    </html>
                 """,
                 mimeType: 'text/html'
             )
@@ -67,15 +76,24 @@ pipeline {
 
         failure {
             emailext(
-                to: 'youremail@gmail.com',
+                to: 'aswinaryanadas@gmail.com',
+                from: 'aswinaryanadas@gmail.com',
                 subject: "❌ BUILD FAILED - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
-                    <h2>Build Failed!</h2>
-                    <p><b>Job:</b> ${env.JOB_NAME}</p>
-                    <p><b>Build Number:</b> ${env.BUILD_NUMBER}</p>
-                    <p><b>Status:</b> FAILED ❌</p>
-                    <p><b>Build URL:</b> <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
-                    <p>Please check the logs for details.</p>
+                    <html>
+                    <body>
+                        <h2 style="color:red;">❌ Build Failed!</h2>
+                        <table>
+                            <tr><td><b>Job:</b></td><td>${env.JOB_NAME}</td></tr>
+                            <tr><td><b>Build Number:</b></td><td>#${env.BUILD_NUMBER}</td></tr>
+                            <tr><td><b>Status:</b></td><td>FAILED ❌</td></tr>
+                            <tr><td><b>Duration:</b></td><td>${currentBuild.durationString}</td></tr>
+                            <tr><td><b>Build URL:</b></td><td><a href="${env.BUILD_URL}">${env.BUILD_URL}</a></td></tr>
+                        </table>
+                        <br>
+                        <p>Please check the build logs for details.</p>
+                    </body>
+                    </html>
                 """,
                 mimeType: 'text/html'
             )
