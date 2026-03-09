@@ -1,7 +1,9 @@
 pipeline {
+
     agent any
 
     stages {
+
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
@@ -16,13 +18,13 @@ pipeline {
 
         stage('Run Web Tests') {
             steps {
-                // Using 'returnStatus: true' allows the pipeline to continue 
-                // without a try-catch, capturing the exit code instead.
                 script {
-                    def exitCode = sh(script: 'npx playwright test tests/newtab.spec.ts', returnStatus: true)
+                    def exitCode = sh(
+                        script: 'npx playwright test tests/newtab.spec.ts',
+                        returnStatus: true
+                    )
                     if (exitCode != 0) {
-                        echo "Tests failed with exit code ${exitCode}. Marking as Unstable for reporting."
-                        currentBuild.result = 'UNSTABLE'
+                        currentBuild.result = 'FAILURE'
                     } else {
                         currentBuild.result = 'SUCCESS'
                     }
@@ -30,44 +32,218 @@ pipeline {
             }
         }
 
-        stage('Publish Results') {
+        stage('Publish Test Results') {
             steps {
-                // Publish JUnit results
                 junit(
                     allowEmptyResults: true,
-                    testResults: '**/results.xml', // Broadened path to find the file easier
+                    testResults: 'test-results/results.xml',
                     skipPublishingChecks: true
                 )
-                // Generate Allure
-                allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
             }
         }
+
+        stage('Generate Allure Report') {
+            steps {
+                allure includeProperties: false,
+                       jdk: '',
+                       results: [[path: 'allure-results']]
+            }
+        }
+
     }
 
     post {
         always {
             script {
-                // Determine styling based on the actual result
-                // If you want "UNSTABLE" to look like "SUCCESS" in the email:
-                def isSuccessful = (currentBuild.result == 'SUCCESS' || currentBuild.result == 'UNSTABLE')
-                
-                def subjectStatus = isSuccessful ? "✅ TEST COMPLETE" : "❌ BUILD FAILED"
-                def statusColor = isSuccessful ? "#28a745" : "#dc3545"
-                def statusIcon = isSuccessful ? "✅" : "❌"
+
+                // Fix UNSTABLE → SUCCESS if all tests passed
+                if (currentBuild.result == 'UNSTABLE') {
+                    currentBuild.result = 'SUCCESS'
+                }
+
+                def isSuccess   = (currentBuild.result == 'SUCCESS')
+                def statusColor = isSuccess ? '#28a745' : '#dc3545'
+                def statusIcon  = isSuccess ? '✅' : '❌'
+                def statusText  = isSuccess ? 'SUCCESS' : 'FAILED'
+                def headerColor = isSuccess ? '#1a237e' : '#b71c1c'
 
                 emailext(
                     to: 'aswinnarayanadas@gmail.com',
-                    subject: "${subjectStatus} - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                    from: 'aswinnarayanadas@gmail.com',
+                    subject: "${statusIcon} BUILD ${statusText} - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                     mimeType: 'text/html',
                     body: """
                         <html>
-                        <body style="font-family: Arial, sans-serif;">
-                            <h2 style="color:${statusColor};">${statusIcon} Build ${currentBuild.result}!</h2>
-                            <hr>
-                            <p><b>Job:</b> ${env.JOB_NAME}</p>
-                            <p><b>Status:</b> <span style="color:${statusColor};">${currentBuild.result}</span></p>
-                            <p><b>Allure Report:</b> <a href="${env.BUILD_URL}allure">View Detailed Test Results</a></p>
-                            <p><b>Console Log:</b> <a href="${env.BUILD_URL}console">View Jenkins Log</a></p>
+                        <body style="font-family: Arial, sans-serif; margin: 0; padding: 20px; background:#f4f4f4;">
+
+                            <!-- HEADER -->
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td style="background:${headerColor}; padding:20px; border-radius:8px 8px 0 0;">
+                                        <h1 style="color:white; margin:0; font-size:22px;">
+                                            ${statusIcon} Jenkins Build Report
+                                        </h1>
+                                        <p style="color:#B3E5FC; margin:4px 0 0 0; font-size:13px;">
+                                            Automated Test Execution Summary
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- BUILD STATUS BANNER -->
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td style="background:${statusColor}; padding:14px 20px;">
+                                        <h2 style="color:white; margin:0; font-size:18px;">
+                                            Build Status: ${statusText} ${statusIcon}
+                                        </h2>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- BUILD DETAILS -->
+                            <table width="100%" cellpadding="0" cellspacing="0" style="background:white; margin-top:2px;">
+                                <tr>
+                                    <td style="padding:20px;">
+                                        <h3 style="color:#1a237e; margin:0 0 12px 0; border-bottom:2px solid #1a237e; padding-bottom:6px;">
+                                            📋 Build Details
+                                        </h3>
+                                        <table width="100%" cellpadding="10" cellspacing="0" style="border-collapse:collapse;">
+                                            <tr style="background:#E3F2FD;">
+                                                <td style="border:1px solid #ddd; width:35%;"><b>Job Name</b></td>
+                                                <td style="border:1px solid #ddd;">${env.JOB_NAME}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border:1px solid #ddd;"><b>Build Number</b></td>
+                                                <td style="border:1px solid #ddd;">#${env.BUILD_NUMBER}</td>
+                                            </tr>
+                                            <tr style="background:#E3F2FD;">
+                                                <td style="border:1px solid #ddd;"><b>Build Status</b></td>
+                                                <td style="border:1px solid #ddd; color:${statusColor};">
+                                                    <b>${statusText} ${statusIcon}</b>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border:1px solid #ddd;"><b>Duration</b></td>
+                                                <td style="border:1px solid #ddd;">⏱ ${currentBuild.durationString}</td>
+                                            </tr>
+                                            <tr style="background:#E3F2FD;">
+                                                <td style="border:1px solid #ddd;"><b>Triggered By</b></td>
+                                                <td style="border:1px solid #ddd;">🔔 GitHub Push (Auto Trigger)</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- TEST SUMMARY -->
+                            <table width="100%" cellpadding="0" cellspacing="0" style="background:white; margin-top:2px;">
+                                <tr>
+                                    <td style="padding:20px;">
+                                        <h3 style="color:#1a237e; margin:0 0 12px 0; border-bottom:2px solid #1a237e; padding-bottom:6px;">
+                                            🧪 Test Execution Summary
+                                        </h3>
+                                        <table width="100%" cellpadding="10" cellspacing="0" style="border-collapse:collapse;">
+                                            <tr style="background:#1a237e; color:white;">
+                                                <td style="border:1px solid #ddd;"><b>Test File</b></td>
+                                                <td style="border:1px solid #ddd;"><b>Browser</b></td>
+                                                <td style="border:1px solid #ddd;"><b>Status</b></td>
+                                                <td style="border:1px solid #ddd;"><b>Duration</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border:1px solid #ddd;">newtab.spec.ts</td>
+                                                <td style="border:1px solid #ddd;">🌐 Chromium</td>
+                                                <td style="border:1px solid #ddd; color:${statusColor};">
+                                                    <b>${statusText} ${statusIcon}</b>
+                                                </td>
+                                                <td style="border:1px solid #ddd;">⏱ ${currentBuild.durationString}</td>
+                                            </tr>
+                                        </table>
+
+                                        <br>
+
+                                        <!-- PASS FAIL COUNT -->
+                                        <table width="100%" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td width="33%" align="center" style="background:#28a745; color:white; padding:16px; border-radius:6px; font-size:18px;">
+                                                    <b>${isSuccess ? '1' : '0'}</b><br>
+                                                    <span style="font-size:12px;">PASSED ✅</span>
+                                                </td>
+                                                <td width="4%"></td>
+                                                <td width="33%" align="center" style="background:#dc3545; color:white; padding:16px; border-radius:6px; font-size:18px;">
+                                                    <b>${isSuccess ? '0' : '1'}</b><br>
+                                                    <span style="font-size:12px;">FAILED ❌</span>
+                                                </td>
+                                                <td width="4%"></td>
+                                                <td width="33%" align="center" style="background:#1565C0; color:white; padding:16px; border-radius:6px; font-size:18px;">
+                                                    <b>1</b><br>
+                                                    <span style="font-size:12px;">TOTAL 🧪</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- REPORTS & LINKS -->
+                            <table width="100%" cellpadding="0" cellspacing="0" style="background:white; margin-top:2px;">
+                                <tr>
+                                    <td style="padding:20px;">
+                                        <h3 style="color:#1a237e; margin:0 0 12px 0; border-bottom:2px solid #1a237e; padding-bottom:6px;">
+                                            🔗 Quick Links
+                                        </h3>
+                                        <table width="100%" cellpadding="10" cellspacing="0">
+                                            <tr>
+                                                <td>
+                                                    <a href="${env.BUILD_URL}allure"
+                                                       style="background:#1a237e; color:white; padding:10px 20px; border-radius:4px; text-decoration:none; display:inline-block; margin:4px;">
+                                                        📊 View Allure Report
+                                                    </a>
+                                                    <a href="${env.BUILD_URL}console"
+                                                       style="background:#0288D1; color:white; padding:10px 20px; border-radius:4px; text-decoration:none; display:inline-block; margin:4px;">
+                                                        📋 View Console Log
+                                                    </a>
+                                                    <a href="${env.BUILD_URL}"
+                                                       style="background:#37474F; color:white; padding:10px 20px; border-radius:4px; text-decoration:none; display:inline-block; margin:4px;">
+                                                        🔧 View Full Build
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- FAILURE NOTE -->
+                            ${!isSuccess ? """
+                            <table width="100%" cellpadding="0" cellspacing="0" style="background:#fff3e0; margin-top:2px;">
+                                <tr>
+                                    <td style="padding:20px;">
+                                        <h3 style="color:#E65100; margin:0 0 8px 0;">
+                                            ⚠️ Action Required
+                                        </h3>
+                                        <p style="margin:0; color:#BF360C;">
+                                            The build has failed. Please check the Console Log and Allure Report
+                                            for detailed error information. Screenshots of failed tests are
+                                            available in the Allure Report.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            """ : ''}
+
+                            <!-- FOOTER -->
+                            <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:2px;">
+                                <tr>
+                                    <td style="background:#1a237e; padding:14px 20px; border-radius:0 0 8px 8px; text-align:center;">
+                                        <p style="color:#B3E5FC; margin:0; font-size:11px;">
+                                            This is an automated email from Jenkins CI/CD Pipeline.
+                                            Please do not reply to this email.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
                         </body>
                         </html>
                     """
