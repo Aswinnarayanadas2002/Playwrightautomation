@@ -16,6 +16,13 @@ pipeline {
             }
         }
 
+        stage('Clean Previous Results') {
+            steps {
+                sh 'rm -rf allure-results'
+                sh 'rm -rf test-results'
+            }
+        }
+
         stage('Run Web Tests') {
             steps {
                 script {
@@ -55,33 +62,29 @@ pipeline {
     post {
         always {
             script {
-
-                // Fix UNSTABLE → SUCCESS if all tests passed
                 if (currentBuild.result == 'UNSTABLE') {
                     currentBuild.result = 'SUCCESS'
                 }
 
-                def isSuccess   = (currentBuild.result == 'SUCCESS')
-                def statusColor = isSuccess ? '#28a745' : '#dc3545'
-                def statusIcon  = isSuccess ? '✅' : '❌'
-                def statusText  = isSuccess ? 'SUCCESS' : 'FAILED'
-                def headerColor = isSuccess ? '#1a237e' : '#b71c1c'
+                def isSuccess  = (currentBuild.result == 'SUCCESS')
+                def statusIcon = isSuccess ? '✅' : '❌'
+                def statusText = isSuccess ? 'SUCCESS' : 'FAILED'
 
                 emailext(
-    to: 'aswinnarayanadas@gmail.com',
-    from: 'aswinnarayanadas@gmail.com',
-    subject: "${statusIcon} BUILD ${statusText} - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-    mimeType: 'text/html',
-    body: """
-        <p><b>Build Status:</b> ${statusText} ${statusIcon}</p>
-        <p><b>Job:</b> ${env.JOB_NAME} #${env.BUILD_NUMBER}</p>
-        <p><b>Duration:</b> ${currentBuild.durationString}</p>
-        <p><b>Test File:</b> newtab.spec.ts</p>
-        <p><b>Passed:</b> ${isSuccess ? '1' : '0'}</p>
-        <p><b>Failed:</b> ${isSuccess ? '0' : '1'}</p>
-        <p><b>Allure Report:</b> <a href="${env.BUILD_URL}allure">Click here</a></p>
-    """
-)
+                    to: 'aswinnarayanadas@gmail.com',
+                    from: 'aswinnarayanadas@gmail.com',
+                    subject: "${statusIcon} BUILD ${statusText} - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                    mimeType: 'text/html',
+                    body: """
+                        <p><b>Build Status:</b> ${statusText} ${statusIcon}</p>
+                        <p><b>Job:</b> ${env.JOB_NAME} #${env.BUILD_NUMBER}</p>
+                        <p><b>Duration:</b> ${currentBuild.durationString}</p>
+                        <p><b>Test File:</b> newtab.spec.ts</p>
+                        <p><b>Passed:</b> ${isSuccess ? '1' : '0'}</p>
+                        <p><b>Failed:</b> ${isSuccess ? '0' : '1'}</p>
+                        <p><b>Allure Report:</b> <a href="${env.BUILD_URL}allure">Click here</a></p>
+                    """
+                )
             }
         }
     }
