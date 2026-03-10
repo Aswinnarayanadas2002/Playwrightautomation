@@ -71,7 +71,6 @@ pipeline {
                 def statusText = isSuccess ? 'SUCCESS' : 'FAILED'
 
                 emailext(
-                    to: 'aswinnarayanadas@gmail.com',
                     from: 'aswinnarayanadas@gmail.com',
                     subject: "${statusIcon} BUILD ${statusText} - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                     mimeType: 'text/html',
