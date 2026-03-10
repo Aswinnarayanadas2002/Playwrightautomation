@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     def exitCode = sh(
-                        script: 'npx playwright test,
+                        script: 'npx playwright test'
                         returnStatus: true
                     )
                     if (exitCode != 0) {
